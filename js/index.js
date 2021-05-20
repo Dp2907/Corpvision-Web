@@ -1,13 +1,89 @@
-// Change Header
+// Header
+var btnNavbar = document.querySelector(".navbar-toggler");
+var header = document.querySelector(".header");
+let flag = true;
+
+btnNavbar.onclick = function () {
+  if (flag) {
+    header.classList.add("header--active");
+    flag = false;
+  } else {
+    header.classList.remove("header--active");
+    flag = true;
+  }
+};
+
+// Scroll Header
 window.onscroll = function (event) {
   let navbarFixed = document.querySelector(".header");
   let toTop = document.querySelector("#pushToTop");
+
+  let navlinkChange = document.querySelectorAll(".nav-link");
+  let navlinkContentChange = document.querySelectorAll(".nav-link-content");
+  let navbarBrandContent = document.querySelectorAll(".navbar-brand-content");
+  let dropdownItem = document.querySelectorAll(".dropdown-item");
+
   if (window.scrollY > 60) {
     navbarFixed.classList.add("header--sticky");
     toTop.classList.add("visibleButton");
+
+    for (let i = 0; i < navbarBrandContent.length; i++) {
+      navbarBrandContent[i].style.color = "var(--heading-color)";
+    }
+    for (let i = 0; i < navlinkChange.length; i++) {
+      navlinkChange[i].style.color = "var(--heading-color)";
+      navlinkChange[i].onmouseover = function () {
+        navlinkChange[i].style.color = "var(--primary-color)";
+      };
+      navlinkChange[i].onmouseout = function () {
+        navlinkChange[i].style.color = "var(--heading-color)";
+      };
+    }
+    for (let i = 0; i < navlinkContentChange.length; i++) {
+      navlinkContentChange[i].style.color = "var(--heading-color)";
+      navlinkChange[3].onmouseover = function () {
+        navlinkChange[3].style.color = "var(--primary-color)";
+        navlinkContentChange[i].style.color = "var(--primary-color)";
+      };
+      navlinkChange[3].onmouseout = function () {
+        navlinkChange[3].style.color = "var(--heading-color)";
+        navlinkContentChange[i].style.color = "var(--heading-color)";
+      };
+    }
+    for (let i = 0; i < dropdownItem.length; i++) {
+      dropdownItem[i].style.color = "var(--heading-color)";
+      dropdownItem[i].onmouseover = function () {
+        dropdownItem[i].style.color = "var(--primary-color)";
+      };
+      dropdownItem[i].onmouseout = function () {
+        dropdownItem[i].style.color = "var(--heading-color)";
+      };
+    }
   } else {
     navbarFixed.classList.remove("header--sticky");
     toTop.classList.remove("visibleButton");
+
+    for (let i = 0; i < navbarBrandContent.length; i++) {
+      navbarBrandContent[i].style.color = "#fff";
+    }
+    for (let i = 0; i < navlinkChange.length; i++) {
+      navlinkChange[i].style.color = "#fff";
+      navlinkChange[i].onmouseover = function () {
+        navlinkChange[i].style.color = "#fff";
+      };
+      navlinkChange[i].onmouseout = function () {
+        navlinkChange[i].style.color = "#fff";
+      };
+    }
+    for (let i = 0; i < navlinkContentChange.length; i++) {
+      navlinkContentChange[i].style.color = "#fff";
+      navlinkChange[3].onmouseover = function () {
+        navlinkContentChange[i].style.color = "#fff";
+      };
+      navlinkChange[3].onmouseout = function () {
+        navlinkContentChange[i].style.color = "#fff";
+      };
+    }
   }
 };
 
@@ -46,3 +122,27 @@ function closeSearchHandler() {
 
 btnSearch.onclick = btnSearchHandler;
 iconClose.onclick = closeSearchHandler;
+
+//Slick Carousel
+$(document).ready(function () {
+  $(".slider__list").slick({
+    fade: true,
+  });
+});
+
+// Light Box
+lightbox.option({
+  resizeDuration: 200,
+  wrapAround: true,
+});
+
+// Owl Carousel
+var owl = $(".owl-carousel");
+owl.owlCarousel({
+  items: 1,
+  loop: true,
+  margin: 10,
+  autoplay: true,
+  autoplayTimeout: 1000,
+  autoplayHoverPause: true,
+});
