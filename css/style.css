@@ -180,9 +180,9 @@ a.btn:focus {
   border-color: var(--primary-color);
 }
 
-a.btn-primary:hover,
-a.btn-primary:focus,
-a.btn-primary:active {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
   color: #fff !important;
   background-color: #008030;
   border-color: #00732c;

@@ -151,19 +151,3 @@ owl.owlCarousel({
   autoplayTimeout: 2000,
   autoplayHoverPause: true,
 });
-
-// Animate
-var slider__h1 = document.querySelectorAll("slider__h1 ");
-var slider__p = document.querySelectorAll("slider__p");
-var slider__btn = document.querySelectorAll("slider__btn");
-var slick__arrow = document.querySelectorAll("slick-arrow");
-var slider__item = document.querySelectorAll("slider__item");
-
-// $slick__item.on(()=>{console.log("asd");})
-for (var i = 0; slick__arrow.length < i++; ) {
-  (function (i) {
-    slick__arrow[i].addEventListener("click", function () {
-      console.log("asdas");
-    });
-  })(i);
-}
