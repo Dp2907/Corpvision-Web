@@ -598,7 +598,7 @@ a.dropdown-item {
 .slider__content h1 {
   color: #fff !important;
   font-size: 1.75rem;
-  max-width: 40rem;
+  max-width: 50rem;
   line-height: 1.2;
 }
 
@@ -1421,11 +1421,12 @@ a.lb-close {
   .slider__content h1 {
     font-size: 3.4375rem;
   }
-  .slider__item {
-    height: 60rem;
-  }
 }
 @media screen and (min-width: 1200px) {
+  .slider__content {
+    margin-top: -4.8rem;
+    margin-left: 2rem;
+  }
   .slider__content h1 {
     font-size: 4.0625rem;
   }
